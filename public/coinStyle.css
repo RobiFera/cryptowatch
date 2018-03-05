@@ -1,0 +1,83 @@
+/* Font imported from googlefonts */
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+
+/* Used to place the footer at the bottom of the page */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    color: #fff;
+    background-color: #161616;
+    margin: 0 0 45px;
+}
+
+/* Footer always at the bottom of the page */
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
+    overflow: hidden; 
+    background-color: #474747;
+    padding: 0.7%;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer > p {
+    margin: 0;
+}
+/* End footer */
+
+/* Responsive */
+@media only screen and (max-width: 452px) {
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 574px) {
+    footer > p {
+        margin: 2%;
+    }
+}
+/* End Responsive */
+
+/* Effects for the links in Top 10 Coins */
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.effect-underline:after {
+	content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale(0,1);
+	transform: scale(0,1);
+}
+
+a.effect-underline:hover:after {
+  opacity: 1;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+/* End of the effects for the links */

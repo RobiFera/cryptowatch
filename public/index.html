@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <link rel="stylesheet" href="/homepageStyle.css">
+    <title>CryptoWatch</title>
+</head>
+
+<body>
+
+    <!-- Boostrap containers -->
+    <div class="container-fluid d-flex">
+        <div class="container">
+
+            <h1 id="title" class="display-3 text-center text-info">CryptoWatch</h1>
+
+            <!-- Search coin form -->
+            <form class="main-form" method="POST">
+                <div class="row justify-content-center">
+                    <div class="form-coin col-sm-5 form-group">
+                        <input type="text" name="coin" class="form-control border border-info" id="coin" placeholder="Search" required>
+                    </div>
+                    <button type="submit" class="btn btn-outline-info"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <!-- This is displayed only if the searched coin doesn't exist. That's controlled in javascript.js -->
+                <label class="text-center error-message">Can't find that coin. Did you write it correctly?</label>
+            </form>
+
+            <!-- Top 10 Coins -->
+            <div class="coins-table border border-info">
+                <h3 id="coins-table-title">Top 10 Coins</h3>
+                <p id="topcoin-1"><b>1.</b> </p>
+                <p id="topcoin-2"><b>2.</b>  </p>
+                <p id="topcoin-3"><b>3.</b>  </p>
+                <p id="topcoin-4"><b>4.</b>  </p>
+                <p id="topcoin-5"><b>5.</b>  </p>
+                <p id="topcoin-6"><b>6.</b>  </p>
+                <p id="topcoin-7"><b>7.</b>  </p>
+                <p id="topcoin-8"><b>8.</b>  </p>
+                <p id="topcoin-9"><b>9.</b>  </p>
+                <p id="topcoin-10"><b>10.</b>  </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer that stays always at the bottom of the page -->
+    <footer class="footer">
+        <p class="align-middle">Developed by Robert Feraru. Data based on <a href="https://coinmarketcap.com/" >CoinMarketCap</a></p>
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script src="/homepageApp.js"></script>
+</body>
+
+</html>
