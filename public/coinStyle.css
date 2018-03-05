@@ -81,3 +81,24 @@ a.effect-underline:hover:after {
 	transform: scale(1);
 }
 /* End of the effects for the links */
+
+
+.coin-price {
+    margin: 25% 5% 5% 5%;
+}
+
+.price {
+    font-size: 3em;
+}
+
+small {
+    font-size: 0.5em;
+}
+
+.positive-percent {
+    color: #5eff4c;
+}
+
+.negative-percent {
+    color: #ff4c4c;
+}

@@ -22,9 +22,11 @@
     <!-- Boostrap containers -->
     <div class="container-fluid d-flex">
         <div class="container">
-
-            {{{coinDataPrice}}}
-
+            
+            <div class="coin-price row justify-content-center">
+                <p class="price">{{currencySymbol}}{{coinDataPrice}}<small id="currency"> {{currency}} </small> <span id="percent">(<span id="percent-number">{{coinDataPercentChange}}</span>%)</span></p>
+            </div>
+        
         </div>
     </div>
 
