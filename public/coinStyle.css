@@ -76,9 +76,26 @@ a.effect-underline:hover:after {
 }
 /* End of the effects for the links */
 
-
+#coin-header{
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
 .coin-price {
-    margin: 25% 5% 5% 5%;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+}
+
+#coin-name {
+    text-transform: capitalize;
+    font-size: 2.2em;
+    display: inline-block;
+    padding: 0;
+}
+
+#coin-id {
+    font-size: 0.6em;
+    color: #999999;
 }
 
 .price {
@@ -98,8 +115,24 @@ small {
 }
 
 /* Responsive */
-@media only screen and (max-width: 452px) {
-    footer {
+
+@media only screen and (max-width: 990px) {
+    #coin-name {
+        font-size: 2rem;
+    }
+    .coin-price {
+        font-size: 0.8rem;
+    }
+    #coin-header{
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    #coin-name {
+        font-size: 1.9rem;
+    }
+    .coin-price {
         font-size: 0.8rem;
     }
 }
@@ -114,52 +147,18 @@ small {
     .title-container {
         margin: 5%
     }
-}
-
-@media only screen and (max-width: 766px) {
-    .coin-price{
-        font-size: 0.8em;
+    #coin-name {
+        font-size: 1.7rem
+    }
+    .coin-price {
+        font-size: 0.6rem;
     }
 }
 
-@media only screen and (max-width: 766px) {
-    .coin-price{
-        font-size: 0.7em;
+@media only screen and (max-width: 452px) {
+    footer {
+        font-size: 0.8rem;
     }
 }
 
-@media only screen and (max-width: 448px) {
-    .coin-price{
-        font-size: 0.6em;
-        margin: 50% 10% 10% 10%!important;
-    }
-}
-
-@media only screen and (max-width: 436px) {
-    .coin-price{
-        font-size: 0.5em;
-        margin: 50% 10% 10% 10%!important;
-    }
-}
-
-@media only screen and (max-width: 380px) {
-    .coin-price{
-        font-size: 0.5em;
-        margin: 50% 5% 5% 5%!important;
-    }
-}
-
-@media only screen and (max-width: 354px) {
-    .coin-price{
-        font-size: 0.5em;
-        margin: 50% 0% 0% 0%!important;
-    }
-}
-
-@media only screen and (max-width: 330px) {
-    .coin-price{
-        font-size: 0.4em;
-        margin: 50% 0% 0% 0%!important;
-    }
-}
 /* End Responsive */

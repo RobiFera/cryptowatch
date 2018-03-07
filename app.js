@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 // Homepage
 app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
 
-// If current url is "../coins/coinid" get the coinid and check if it's valid. If it's valid, redirect to the coin page.
+// If current url is "../coins/coinid" get the coinid and check if it's valid. If yes, redirect to the coin page, else go to the homepage.
 app.get("/coins/:coinId", function (req, res) {
     let coinId = req.params.coinId;
     let coinDataUrl = "https://api.coinmarketcap.com/v1/ticker/" + coinId + "/?convert=" + currency;
@@ -48,12 +48,14 @@ app.get("/coins/:coinId", function (req, res) {
             // Get percent change
             let coinDataPercentChange = coinData.percent_change_24h.replace(/\"/g, "").replace(".", ",");
 
+            // Render the view engine
             res.render("coin", {
                 currencySymbol: currencySymbol,
                 coinDataPrice: coinDataPrice,
                 currency: currency,
                 coinDataPercentChange: coinDataPercentChange,
-                
+                coinDataName: coinData.name,
+                coinDataSymbol: coinData.symbol,
             });
 
         }

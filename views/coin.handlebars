@@ -24,21 +24,33 @@
         <div class="container">
 
             <div class="title-container">
-                
-                    <h1 id="title" class="display-3 text-center text-info"><a href="/">CryptoWatch</a></h1>
-                
+
+                <h1 id="title" class="display-3 text-center text-info">
+                    <a href="/">CryptoWatch</a>
+                </h1>
+
             </div>
-            
-            <div class="coin-price row justify-content-center">
-                <p class="price">{{currencySymbol}}{{coinDataPrice}}<small id="currency"> {{currency}} </small> <span id="percent">(<span id="percent-number">{{coinDataPercentChange}}</span>%)</span></p>
+
+            <div id="coin-header" class="row justify-content-center text-center">
+                <p id="coin-name" class="col-13 col-md-5">{{coinDataName}}
+                    <b id="coin-id">({{coinDataSymbol}})</b>
+                </p>
+
+                <div class="coin-price col-13 col-md-7">
+                    <p class="price">{{currencySymbol}}{{coinDataPrice}}<small id="currency"> {{currency}} </small>
+                        <span id="percent">(<span id="percent-number">{{coinDataPercentChange}}</span>%)</span>
+                    </p>
+                </div>
             </div>
-        
+
         </div>
     </div>
 
     <!-- Footer that stays always at the bottom of the page -->
     <footer class="footer">
-        <p class="align-middle">Developed by Robert Feraru. Data based on <a href="https://coinmarketcap.com/" >CoinMarketCap</a></p>
+        <p class="align-middle">Developed by Robert Feraru. Data based on
+            <a href="https://coinmarketcap.com/">CoinMarketCap</a>
+        </p>
     </footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
