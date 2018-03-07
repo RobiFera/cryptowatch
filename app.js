@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 // Declare static files in public folder
 app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/cryptoicons'));
 
 // View engine setup
 app.set("views", __dirname + "/views");

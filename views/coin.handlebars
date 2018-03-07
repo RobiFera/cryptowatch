@@ -13,6 +13,9 @@
     <!-- Font Awesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
+    <!-- CSS defining icons (required) -->
+    <link rel="stylesheet" href="/cryptoicons/cryptocoins.css">
+
     <link rel="stylesheet" href="/coinStyle.css">
     <title>CryptoWatch</title>
 </head>
@@ -32,9 +35,12 @@
             </div>
 
             <div id="coin-header" class="row justify-content-center text-center">
-                <p id="coin-name" class="col-13 col-md-5">{{coinDataName}}
-                    <b id="coin-id">({{coinDataSymbol}})</b>
-                </p>
+
+                <div id="coin-name" class="col-13 col-md-5">
+                    <p><i class="cc"></i> {{coinDataName}}
+                        <b id="coin-id">({{coinDataSymbol}})</b>
+                    </p>
+                </div>
 
                 <div class="coin-price col-13 col-md-7">
                     <p class="price">{{currencySymbol}}{{coinDataPrice}}<small id="currency"> {{currency}} </small>
