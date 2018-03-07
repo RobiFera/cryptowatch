@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     // Declare your website's ip
     let website = "http://127.0.0.1:8080";
-    
+
     // Get the Top 10 Coins and display them in order, assigning them the equivalent url. Example: BITCOIN = http://127.0.0.1:8080/coins/bitcoin
     $.getJSON("https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=10", function (topCoins) {
         console.log(topCoins);
@@ -23,26 +23,59 @@ $(document).ready(function () {
         console.log(coinMarketCap);
         // When the form is submitted
         $(".main-form").submit(function (event) {
-            //Check if coin exists
+            let startTime = performance.now();
+            // Delete the previous results
+            $("#search-results").empty();
+
+            // Check if coin exists
             event.preventDefault();
             function checkCoin(coin) {
+                let foundCoins = [];
                 for (var i = 0; i < coinMarketCap.length; i++) {
-                    if (coinMarketCap[i].id == coin.toLowerCase()) {
+                    /* if (coinMarketCap[i].id == coin.toLowerCase()) {
+                        window.location.assign(website + "/coins/" + coinMarketCap[i].id);
+                     if (coinMarketCap[i].name == coin) {
+                        window.location.assign(website + "/coins/" + coinMarketCap[i].id);
+                        return coinMarketCap[i].id; */
+                     if (coinMarketCap[i].symbol == coin.toUpperCase()) {
                         window.location.assign(website + "/coins/" + coinMarketCap[i].id);
                         return coinMarketCap[i].id;
-                    } else if (coinMarketCap[i].name == coin) {
-                        window.location.assign(website + "/coins/" + coinMarketCap[i].id);
-                        return coinMarketCap[i].id;
-                    } else if (coinMarketCap[i].symbol == coin.toUpperCase()) {
-                        window.location.assign(website + "/coins/" + coinMarketCap[i].id);
-                        return coinMarketCap[i].id;
+
+                    // Search engine
+                    } else {
+                        if (coinMarketCap[i].id.search(coin.toLowerCase()) !== -1) {
+                            foundCoins.push(coinMarketCap[i].id);
+                        }
                     }
                 };
-                //If it doesn't exist, throw the error message
-                $(".error-message").css("visibility", "visible");
+
+                // If only a coin was found, redirect to its page directly
+                if (foundCoins.length == 1) {
+                    window.location.assign(website + "/coins/" + foundCoins[0]);
+                    return coinMarketCap[i].id;
+                
+                // If more coins were found, show the results
+                } else if (foundCoins.length > 1) {
+                    
+                    $(".coins-table").hide();
+                    $("#search").css("visibility", "visible");
+                    $("#search-info").css("visibility", "visible");
+
+                    for(var i = 0; i < foundCoins.length; i++) {
+                        $("#search-results").append("<p class=\"text-info\">" + "<a class=\"effect-underline\" href=\"/coins/" + foundCoins[i] + "\" >" + foundCoins[i] + "</a></p>");
+                    }
+
+                    $("#search-info-text").html((foundCoins.length) + " coins found (" + ((performance.now() - startTime) / 1000).toFixed(4) + " seconds)");
+                    return foundCoins;
+
+                // If no coins were found, throw the error message
+                } else {
+                    $(".error-message").css("visibility", "visible");
+                    return null;
+                }
             };
-            
-            //Fire the checkCoin function, and store the coin in a variable called "coin"
+
+            // Fire the checkCoin function, and store the coin in a variable called "coin"
             let coin = checkCoin($("#coin").val());
             console.log(coin);
         });

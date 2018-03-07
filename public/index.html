@@ -23,17 +23,33 @@
     <div class="container-fluid d-flex">
         <div class="container">
 
-            <h1 id="title" class="display-3 text-center text-info">CryptoWatch</h1>
+            <div class="title-container">
+
+                <h1 id="title" class="display-3 text-center text-info">
+                    <a href="/">CryptoWatch</a>
+                </h1>
+
+            </div>
+
 
             <!-- Search coin form -->
             <form class="main-form" method="POST">
-                <div class="row justify-content-center">
-                    <div class="form-coin col-sm-5 form-group">
-                        <input type="text" name="coin" class="form-control border border-info" id="coin" placeholder="Search" required>
+                <div>
+                    <div class="row justify-content-center">
+                        <div class="form-coin col-sm-5 form-group">
+                            <input type="text" name="coin" class="form-control border border-info" id="coin" placeholder="Search" required>
+                        </div>
+                        <button type="submit" class="btn btn-outline-info">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
-                    <button type="submit" class="btn btn-outline-info"><i class="fas fa-search"></i></button>
+                    <div class="row justify-content-center">
+                        <div class="col-sm-5" id="search-info">
+                            <p id="search-info-text">4 coins found in about 0.2 seconds</p>
+                        </div>
+                    </div>
                 </div>
-                
+
                 <!-- This is displayed only if the searched coin doesn't exist. That's controlled in javascript.js -->
                 <label class="text-center error-message">Can't find that coin. Did you write it correctly?</label>
             </form>
@@ -41,24 +57,55 @@
             <!-- Top 10 Coins -->
             <div class="coins-table border border-info">
                 <h3 id="coins-table-title">Top 10 Coins</h3>
-                <p id="topcoin-1"><b>1.</b> </p>
-                <p id="topcoin-2"><b>2.</b>  </p>
-                <p id="topcoin-3"><b>3.</b>  </p>
-                <p id="topcoin-4"><b>4.</b>  </p>
-                <p id="topcoin-5"><b>5.</b>  </p>
-                <p id="topcoin-6"><b>6.</b>  </p>
-                <p id="topcoin-7"><b>7.</b>  </p>
-                <p id="topcoin-8"><b>8.</b>  </p>
-                <p id="topcoin-9"><b>9.</b>  </p>
-                <p id="topcoin-10"><b>10.</b>  </p>
+                <p id="topcoin-1">
+                    <b>1.</b>
+                </p>
+                <p id="topcoin-2">
+                    <b>2.</b>
+                </p>
+                <p id="topcoin-3">
+                    <b>3.</b>
+                </p>
+                <p id="topcoin-4">
+                    <b>4.</b>
+                </p>
+                <p id="topcoin-5">
+                    <b>5.</b>
+                </p>
+                <p id="topcoin-6">
+                    <b>6.</b>
+                </p>
+                <p id="topcoin-7">
+                    <b>7.</b>
+                </p>
+                <p id="topcoin-8">
+                    <b>8.</b>
+                </p>
+                <p id="topcoin-9">
+                    <b>9.</b>
+                </p>
+                <p id="topcoin-10">
+                    <b>10.</b>
+                </p>
             </div>
+
+            <!-- Search results -->
+            <div id="search">
+                <div id="search-results">
+
+                </div>
+            </div>
+
+
 
         </div>
     </div>
 
     <!-- Footer that stays always at the bottom of the page -->
     <footer class="footer">
-        <p class="align-middle">Developed by Robert Feraru. Data based on <a href="https://coinmarketcap.com/" >CoinMarketCap</a></p>
+        <p class="align-middle">Developed by Robert Feraru. Data based on
+            <a href="https://coinmarketcap.com/">CoinMarketCap</a>
+        </p>
     </footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

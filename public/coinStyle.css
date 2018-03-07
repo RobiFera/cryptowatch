@@ -13,6 +13,14 @@ body {
     margin: 0 0 45px;
 }
 
+.title-container {
+    margin: 55.500px;
+}
+
+.title-container > a {
+    display: inline;
+}
+
 /* Footer always at the bottom of the page */
 footer {
     position: absolute;
@@ -31,20 +39,6 @@ footer > p {
     margin: 0;
 }
 /* End footer */
-
-/* Responsive */
-@media only screen and (max-width: 452px) {
-    footer {
-        font-size: 0.8rem;
-    }
-}
-
-@media only screen and (max-width: 574px) {
-    footer > p {
-        margin: 2%;
-    }
-}
-/* End Responsive */
 
 /* Effects for the links in Top 10 Coins */
 a {
@@ -102,3 +96,70 @@ small {
 .negative-percent {
     color: #ff4c4c;
 }
+
+/* Responsive */
+@media only screen and (max-width: 452px) {
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 574px) {
+    footer > p {
+        margin: 2%;
+    }
+    #title {
+        font-size: 2.5rem!important;
+    }
+    .title-container {
+        margin: 5%
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    .coin-price{
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    .coin-price{
+        font-size: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 448px) {
+    .coin-price{
+        font-size: 0.6em;
+        margin: 50% 10% 10% 10%!important;
+    }
+}
+
+@media only screen and (max-width: 436px) {
+    .coin-price{
+        font-size: 0.5em;
+        margin: 50% 10% 10% 10%!important;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .coin-price{
+        font-size: 0.5em;
+        margin: 50% 5% 5% 5%!important;
+    }
+}
+
+@media only screen and (max-width: 354px) {
+    .coin-price{
+        font-size: 0.5em;
+        margin: 50% 0% 0% 0%!important;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .coin-price{
+        font-size: 0.4em;
+        margin: 50% 0% 0% 0%!important;
+    }
+}
+/* End Responsive */
