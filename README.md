@@ -7,7 +7,7 @@ This is a personal project and my first website. I'm doing it mainly for learnin
 
 - [x] Display data for each coin separately
 - [x] Implement a search engine
-- [ ] Optimize the API calls
+- [x] Optimize the API calls
 - [ ] Update data in real-time
 - [ ] Display more useful data and statistics
 
