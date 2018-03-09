@@ -3,8 +3,8 @@ $(document).ready(function () {
     // Declare your website's ip
     let website = "http://127.0.0.1:8080";
 
-    // Get the Top 10 Coins and display them in order, assigning them the equivalent url. Example: BITCOIN = http://127.0.0.1:8080/coins/bitcoin
-    $.getJSON("https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=10", function (topCoins) {
+    // Get the coins from Node and display the top 10 in order, assigning them the equivalent url. Example: BITCOIN = http://127.0.0.1:8080/coins/bitcoin
+    $.getJSON(website + "/coindata/json", function (topCoins) {
         console.log(topCoins);
         $("#topcoin-1").append("<b class=\"topcoin-name\">" + "<a class=\"effect-underline\" href=\"/coins/" + topCoins[0].id + "\" >" + topCoins[0].name + "</b>" + "<a/>" + ": " + "€" + parseFloat(topCoins[0].price_eur).toFixed(2));
         $("#topcoin-2").append("<b class=\"topcoin-name\">" + "<a class=\"effect-underline\" href=\"/coins/" + topCoins[1].id + "\" >" + topCoins[1].name + "</b>" + "<a/>" + ": " + "€" + parseFloat(topCoins[1].price_eur).toFixed(2));
@@ -18,8 +18,8 @@ $(document).ready(function () {
         $("#topcoin-10").append("<b class=\"topcoin-name\">" + "<a class=\"effect-underline\" href=\"/coins/" + topCoins[9].id + "\" >" + topCoins[9].name + "</b>" + "<a/>" + ": " + "€" + parseFloat(topCoins[9].price_eur).toFixed(2));
     });
 
-    // Get all the coins, but not more than 200
-    $.getJSON("https://api.coinmarketcap.com/v1/ticker/?convert=EUR&limit=200", function (coinMarketCap) {
+    // Get all the coins from Node
+    $.getJSON(website + "/coindata/json", function (coinMarketCap) {
         console.log(coinMarketCap);
         // When the form is submitted
         $(".main-form").submit(function (event) {
