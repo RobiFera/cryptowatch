@@ -1,0 +1,25 @@
+{
+  "name": "coinmarketcap",
+  "version": "1.0.0",
+  "description": "**CryptoWatch is a tool for analysing cryptocoins's prices.**",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robfera/cryptowatch.git"
+  },
+  "author": "Robert Feraru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Robfera/cryptowatch/issues"
+  },
+  "homepage": "https://github.com/Robfera/cryptowatch#readme"
+}
