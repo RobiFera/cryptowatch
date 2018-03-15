@@ -10,6 +10,7 @@ This is a personal project and my first website. I'm doing it mainly for learnin
 - [x] Optimize the API calls
 - [ ] Update data in real-time
 - [ ] Display more useful data and statistics
+- [ ] Implement a CMS
 
 ## Details and APIs
 I'm developing all in local with Node and port 8080.  
