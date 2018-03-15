@@ -20,9 +20,7 @@
     <title>CryptoWatch</title>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script>
-        var socket = io();
-    </script>
+
 </head>
 
 <body>
@@ -44,12 +42,15 @@
                 <div id="coin-name" class="col-13 col-md-5">
                     <p>
                         <i class="cc"></i> {{coinDataName}}
-                        <b id="coin-id">({{coinDataSymbol}})</b>
+                        <b id="coin-symbol">({{coinDataSymbol}})</b>
                     </p>
                 </div>
 
                 <div class="coin-price col-13 col-md-7">
-                    <p class="price">{{currencySymbol}}{{coinDataPrice}}<small id="currency"> {{currency}} </small><span id="percent">(<span id="percent-number">{{coinDataPercentChange}}</span>%)</span>
+                    <p class="price">{{currencySymbol}}
+                        <span id="coin-price">{{coinDataPrice}}</span>
+                        <small id="currency"> {{currency}} </small>
+                        <span id="percent">(<span id="percent-number">{{coinDataPercentChange}}</span>%)</span>
                     </p>
                 </div>
             </div>
@@ -72,6 +73,25 @@
         crossorigin="anonymous"></script>
 
     <script src="/coinApp.js"></script>
+
+    <script>
+        
+        // Take the coin's ID
+        let coinId = location.pathname.split('/').slice(-1)[0];
+
+        var socket = io();
+        
+        console.log(coinId);
+
+        socket.on("userReady" + coinId, function (data) {
+
+            $("#coin-price").html(data[0]);
+            $("#percent-number").html(data[1]);
+            console.log(data);
+        
+        });
+    </script>
+
 </body>
 
 </html>

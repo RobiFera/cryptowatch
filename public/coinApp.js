@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    // Take the coin's id
-    let coinId = $("#coin-id").html().replace(/\(/g, "").replace(/\)/g, "")
+    // Take the coin's symbol
+    let coinSymbol = $("#coin-symbol").html().replace(/\(/g, "").replace(/\)/g, "")
 
     // Take the coin's value change of the last 24 hours
     let percent = parseFloat($("#percent-number").text());
@@ -13,6 +13,6 @@ $(document).ready(function () {
         $("#percent").addClass("negative-percent");
     }
 
-    // Take the coin's icon based on his id and display id by adding the class. https://github.com/AllienWorks/cryptocoins
-    $(".cc").addClass(coinId);
+    // Take the coin's icon based on his symbol and display symbol by adding the class. https://github.com/AllienWorks/cryptocoins
+    $(".cc").addClass(coinSymbol);
 });
