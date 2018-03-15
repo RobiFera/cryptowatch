@@ -13,8 +13,10 @@ This is a personal project and my first website. I'm doing it mainly for learnin
 - [ ] Implement a CMS
 
 ## Details and APIs
-I'm developing all in local with Node and port 8080.  
-**DEFAULT IP: _127.0.0.1:8080._** It can be changed in the variable "**let website**", in "**homepageApp.js**".  
+I'm developing all in local with Node.  
+**DEFAULT PORT: _8080._** It can be changed in "**app.js**", variable "**const port**"  
+**DEFAULT IP: _127.0.0.1:8080._** It can be changed in "**homepageApp.js**", variable "**const website**".  
+I'll make a CMS when the website will be stable, so it will be easier to configure the app.
   
 I'm using [CoinMarketCap's API](https://coinmarketcap.com/api/) for the data
 and the [Cryptocoins iconpack](https://github.com/AllienWorks/cryptocoins) for the icons.
