@@ -70,13 +70,6 @@ $(document).ready(function () {
         // Take the coin's symbol
         let coinSymbol = $("#coin-symbol").html().replace(/\(/g, "").replace(/\)/g, "");
 
-        // Color text in green if the percentage is positive, and in red if the percentage is negative
-        if (percent >= 0) {
-            $("#percent").addClass("positive-percent");
-        } else {
-            $("#percent").addClass("negative-percent");
-        }
-
         // Take the coin's icon based on his symbol and display symbol by adding the class. https://github.com/AllienWorks/cryptocoins
         $(".cc").addClass(coinSymbol);
 
@@ -85,7 +78,7 @@ $(document).ready(function () {
         setInterval(function () {
 
             $.getJSON(jsonApi, function (apiData) {
-                
+
                 // Get new data
                 coinData = apiData[index];
 
@@ -106,31 +99,43 @@ $(document).ready(function () {
                 // Display data
 
                 //Coin price
-                if(NEWcoinDataPrice !== coinDataPrice) {
+                if (NEWcoinDataPrice !== coinDataPrice) {
 
                     // Color effects when the price changes
-                    if(NEWcoinDataPrice > coinDataPrice) {
-                        $("#coin-price").addClass("positive-change").animate({color: "#ffffff"}, 10000);
+                    if (NEWcoinDataPrice > coinDataPrice) {
+                        $("#coin-price").addClass("positive-change").animate({ color: "#ffffff" }, 10000);
                     } else {
-                        $("#coin-price").addClass("negative-change").animate({color: "#ffffff"}, 10000);
+                        $("#coin-price").addClass("negative-change").animate({ color: "#ffffff" }, 10000);
                     }
                     $("#coin-price").html(NEWcoinDataPrice);
                     coinDataPrice = NEWcoinDataPrice;
                 }
-                
+
                 //Percent change
-                if(NEWcoinDataPercentChange !== coinDataPercentChange) {
+                if (NEWcoinDataPercentChange !== coinDataPercentChange) {
                     $("#percent-number").html(NEWcoinDataPercentChange);
                     coinDataPercentChange = NEWcoinDataPercentChange;
                 }
 
-
+                // Color text in green if the percentage is positive, and in red if the percentage is negative
+                if (coinDataPercentChange.replace(/,/g, '.') > 0) {
+                    $("#percent").addClass("positive-percent");
+                } else {
+                    $("#percent").addClass("negative-percent");
+                }
+                
                 console.log(NEWcoinDataPrice);
 
             });
 
         }, 6000);
 
+        // Color text in green if the percentage is positive, and in red if the percentage is negative
+        if (coinDataPercentChange.replace(/,/g, '.') > 0) {
+            $("#percent").addClass("positive-percent");
+        } else {
+            $("#percent").addClass("negative-percent");
+        }
 
     });
 
