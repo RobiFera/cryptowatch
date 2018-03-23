@@ -9,8 +9,10 @@ This is a personal project and my first website. I'm doing it mainly for learnin
 - [x] Implement a search engine
 - [x] Optimize the API calls
 - [x] Update data in real-time
+- [ ] Display data in different currencies
 - [ ] Display more useful data and statistics
 - [ ] Implement a CMS
+- [ ] Implement an API that predicts the coins's trends (Very hard for me to do but I believe I could make it work)
 
 ## Details and APIs
 I'm developing all in local with Node.  
