@@ -3,8 +3,11 @@ $(document).ready(function () {
     // Declare your website's ip
     const website = "http://127.0.0.1:8080";
 
+    // Config
+    const currency = "EUR";
+
     // JSON API
-    const jsonApi = website + "/coindata/json";
+    let jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=200";
 
     // Get the coins from Node and display the top 10 in order, assigning them the equivalent url. Example: BITCOIN = http://127.0.0.1:8080/coins/bitcoin
     $.getJSON(jsonApi, function (topCoins) {

@@ -2,16 +2,15 @@ $(document).ready(function () {
     // Declare your website's ip
     const website = "http://127.0.0.1:8080";
 
-    // JSON API
-    const jsonApi = website + "/coindata/json";
-
     // Take the coin's ID
     const coinId = location.pathname.split('/').slice(-1)[0];
 
     // Config
     const currencySymbol = "€";
     const currency = "EUR";
-
+    
+    // JSON API
+    let jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=200";
 
     // Check if coins exists. If coin doesn't exists, redirect to homepage; if it does, display the data.
     $.getJSON(jsonApi, function (apiData) {

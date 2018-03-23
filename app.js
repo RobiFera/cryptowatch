@@ -23,33 +23,6 @@ app.use(express.static(__dirname + '/public/cryptoicons'));
 
 
 
-// -- API SETUP --
-
-// Build the url
-let apiDataUrl = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=" + limit;
-
-// Get json data from url
-request.get(apiDataUrl, (error, response, body) => {
-    apiData = JSON.parse(body);
-});
-
-// Update data every 6 seconds / 10 requests per minute
-setInterval(function () {
-    request.get(apiDataUrl, (error, response, body) => {
-        apiData = JSON.parse(body);
-    });
-    //console.log(apiData[1]);
-}, 6000);
-
-// Send data to frontend
-app.get("/coindata/json", function (req, res) {
-    res.json(apiData);
-});
-
-// -- END API SETUP --
-
-
-
 // -- ROUTES --
 
 // Homepages
