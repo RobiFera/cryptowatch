@@ -107,10 +107,12 @@ $(document).ready(function () {
 
                 //Coin price
                 if(NEWcoinDataPrice !== coinDataPrice) {
+
+                    // Color effects when the price changes
                     if(NEWcoinDataPrice > coinDataPrice) {
-                        $("#coin-price").addClass("positive-change").animate({color: "#ffffff"}, 6000);
+                        $("#coin-price").addClass("positive-change").animate({color: "#ffffff"}, 10000);
                     } else {
-                        $("#coin-price").addClass("negative-change").animate({color: "#ffffff"}, 6000);
+                        $("#coin-price").addClass("negative-change").animate({color: "#ffffff"}, 10000);
                     }
                     $("#coin-price").html(NEWcoinDataPrice);
                     coinDataPrice = NEWcoinDataPrice;
