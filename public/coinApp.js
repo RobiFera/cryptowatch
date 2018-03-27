@@ -5,15 +5,33 @@ $(document).ready(function () {
     // Take the coin's ID
     const coinId = location.pathname.split('/').slice(-1)[0];
 
+
+
     // Config
-    const currencySymbol = "€";
-    const currency = "EUR";
+
+    // Arrays of all the currencies and symbols
+    const currencyArray = ["AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "ZAR"]
+    const currencySymbolArray = ["$", "R$", "$", "Fr. ", "$", "¥", "Kč", "kr. ", "€", "£", "$", "Ft ", "Rp ", "₪", "₹", "¥", "₩", "$", "RM", "kr ", "$", "₱", "₨ ", "zł", "₽", "kr ", "S$", "฿", "₺", "NT$", "R "];
+
+    // The default currency that is already selected
+    const currencyDefault = currencyArray[8];
+
+    // The chosen currency
+    const currency = currencyDefault
+
+    // Get symbol based on the selected currency
+    const currencySymbol = currencySymbolArray[currencyArray.indexOf(currency)];
+
+    // Get a string based on the selected currency, so you can call the correct price data
+    const currencyObject = "price_" + currency.toLowerCase();
     
     // JSON API
     let jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=200";
 
     // Check if coins exists. If coin doesn't exists, redirect to homepage; if it does, display the data.
     $.getJSON(jsonApi, function (apiData) {
+
+
 
         // Variables
         let index = 0;
@@ -36,7 +54,7 @@ $(document).ready(function () {
         } else {
 
             // Get the coin's price
-            coinDataPrice = parseFloat(coinData.price_eur.replace(/\"/g, ""));
+            coinDataPrice = parseFloat(coinData[currencyObject].replace(/\"/g, ""));
             if (coinDataPrice > 10) {
                 coinDataPrice = coinDataPrice.toFixed(2).replace(".", ",");
             } else if (coinDataPrice > 1 && coinDataPrice < 10) {
@@ -82,7 +100,7 @@ $(document).ready(function () {
                 coinData = apiData[index];
 
                 // Get the coin's price
-                NEWcoinDataPrice = parseFloat(coinData.price_eur.replace(/\"/g, ""));
+                NEWcoinDataPrice = parseFloat(coinData[currencyObject].replace(/\"/g, ""));
                 if (NEWcoinDataPrice > 10) {
                     NEWcoinDataPrice = NEWcoinDataPrice.toFixed(2).replace(".", ",");
                 } else if (NEWcoinDataPrice > 1 && NEWcoinDataPrice < 10) {
