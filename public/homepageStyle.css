@@ -149,6 +149,18 @@ footer > p {
 
 /* End search results
 
+/* Change currency button */
+
+.dropdown-item:hover{
+    background: #f8f9fa!important;
+    cursor: pointer;
+}
+
+.dropdown-menu{
+}
+
+/* End change currency button */
+
 /* Responsive */
 @media only screen and (max-width: 574px) {
     #title {

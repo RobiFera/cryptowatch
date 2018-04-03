@@ -120,9 +120,19 @@ $(document).ready(function () {
 
                     // Color effects when the price changes
                     if (NEWcoinDataPrice > coinDataPrice) {
-                        $("#coin-price").addClass("positive-change").animate({ color: "#ffffff" }, 10000);
+                        $("#coin-price").css("color", "#10ff00");
+                        $("#coin-price").animate({ color: "#ffffff" }, 5900);
+                        var priceColorChangePositive = setInterval(function () {
+                            $("#coin-price").stop();
+                        }, 5900);
+                        clearInterval(priceColorChangePositive);
                     } else {
-                        $("#coin-price").addClass("negative-change").animate({ color: "#ffffff" }, 10000);
+                        $("#coin-price").css("color", "#ff0000");
+                        $("#coin-price").animate({ color: "#ffffff" }, 5900);
+                        var priceColorChangeNegative = setInterval(function () {
+                            $("#coin-price").stop();
+                        }, 5900);
+                        clearInterval(priceColorChangeNegative);
                     }
                     $("#coin-price").html(NEWcoinDataPrice);
                     coinDataPrice = NEWcoinDataPrice;

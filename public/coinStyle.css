@@ -116,14 +116,6 @@ small {
     color: #ff4c4c;
 }
 
-.positive-change {
-    color: #10ff00;
-}
-
-.negative-change {
-    color: #ff0000;
-}
-
 /* Responsive */
 
 @media only screen and (max-width: 990px) {
