@@ -21,6 +21,32 @@ body {
     display: inline;
 }
 
+.dropdown-menu{
+    width: 265px;
+}
+
+/* Currencies dropdown */
+
+.global-currency-dropdown-container {
+    margin-top: 3%;
+}
+
+.global-stats.desktop .language-dropdown-menu, .global-stats.desktop .global-currency-dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.global-currency-dropdown-container .dropdown-menu li {
+    width: 25%;
+    float: left;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* End currencies dropdown */
+
 /* Footer always at the bottom of the page */
 footer {
     position: absolute;

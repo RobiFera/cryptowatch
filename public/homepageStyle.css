@@ -13,8 +13,33 @@ body {
     margin: 0 0 45px;
 }
 
+/* Currencies dropdown */
+
+.global-currency-dropdown-container {
+    margin-top: 3%;
+}
+
+.global-stats.desktop .language-dropdown-menu, .global-stats.desktop .global-currency-dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.global-currency-dropdown-container .dropdown-menu li {
+    width: 25%;
+    float: left;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    width: 265px;
+}
+/* End currencies dropdown */
+
 .title-container {
-    margin: 5%;
+    margin: 0% 5% 5% 5%;
 }
 
 .title-container > a {
@@ -55,6 +80,9 @@ body {
     text-transform: uppercase;
 }
 
+#change-currency {
+    margin: 5% 0% 0% 0%;
+}
 /* Color the Top 5 Coins gradually, from green to white */
 #topcoin-1 > b {
     color: #00ff09;
