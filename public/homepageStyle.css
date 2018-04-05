@@ -29,6 +29,10 @@ body {
     float: left;
 }
 
+.global-currency-dropdown {
+    background-color: #17a2b8;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -36,6 +40,7 @@ body {
 .dropdown-menu{
     width: 265px;
 }
+
 /* End currencies dropdown */
 
 .title-container {

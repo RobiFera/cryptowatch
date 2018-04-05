@@ -14,15 +14,11 @@ body {
 }
 
 .title-container {
-    margin: 55.500px;
+    margin: 0% 5% 5% 5%;
 }
 
 .title-container > a {
     display: inline;
-}
-
-.dropdown-menu{
-    width: 265px;
 }
 
 /* Currencies dropdown */
@@ -41,8 +37,16 @@ body {
     float: left;
 }
 
+.global-currency-dropdown {
+    background-color: #17a2b8;
+}
+
 .pointer {
     cursor: pointer;
+}
+
+.dropdown-menu{
+    width: 265px;
 }
 
 /* End currencies dropdown */

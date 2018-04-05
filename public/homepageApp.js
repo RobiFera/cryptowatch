@@ -35,7 +35,6 @@ $(document).ready(function () {
 
     if(getCookie("selectedCurrency") !== ""){
         currency = getCookie("selectedCurrency");
-        console.log(getCookie("selectedCurrency"));
     }
 
     // Get symbol based on the selected currency
