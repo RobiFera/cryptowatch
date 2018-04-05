@@ -7,8 +7,6 @@ $(document).ready(function () {
 
 
 
-    // Config
-
     function getCookie(cname) {
         var name = cname + "=";
         var decodedCookie = decodeURIComponent(document.cookie);
@@ -71,6 +69,7 @@ $(document).ready(function () {
         let NEWcoinDataPercentChange;
         let coinDataPrice;
         let coinDataPercentChange;
+        let supply = [];
 
         // Check for coin based by id in the url
         for (let apiDataLength = apiData.length; index < apiDataLength; index++) {
@@ -97,6 +96,8 @@ $(document).ready(function () {
             // Get percent change
             coinDataPercentChange = coinData.percent_change_24h.replace(/\"/g, "").replace(".", ",");
 
+            // Get max supply and circulating supply
+            supply.push(Math.round(coinData.available_supply), Math.round(coinData.max_supply));
 
             // Display data
 
@@ -112,6 +113,10 @@ $(document).ready(function () {
             $("#currency").html(currency);
             //Percent change
             $("#percent-number").html(coinDataPercentChange);
+            //Circulating Supply
+            $("#circulating-supply").html(supply[0].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") + " " + coinData.symbol);
+            //Max Supply
+            $("#max-supply").html(supply[1].toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") + " " + coinData.symbol );
         };
 
 
