@@ -7,15 +7,36 @@ $(document).ready(function () {
 
     // Config
 
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
     // Arrays of all the currencies and symbolss
     const currencyArray = ["AUD", "BRL", "CAD", "CHF", "CLP", "CNY", "CZK", "DKK", "EUR", "GBP", "HKD", "HUF", "IDR", "ILS", "INR", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PKR", "PLN", "RUB", "SEK", "SGD", "THB", "TRY", "TWD", "USD", "ZAR"]
     const currencySymbolArray = ["$", "R$", "$", "Fr. ", "$", "¥", "Kč", "kr. ", "€", "£", "$", "Ft ", "Rp ", "₪", "₹", "¥", "₩", "$", "RM", "kr ", "$", "₱", "₨ ", "zł", "₽", "kr ", "S$", "฿", "₺", "NT$", "$", "R "];
 
-    // The default currency that is already selected
-    const currencyDefault = currencyArray[8];
+    // The default currency
+    let defaultCurrency = currencyArray[8];
 
     // The chosen currency
-    let currency = currencyDefault
+    let currency = defaultCurrency;
+
+    if(getCookie("selectedCurrency") !== ""){
+        currency = getCookie("selectedCurrency");
+        console.log(getCookie("selectedCurrency"));
+    }
 
     // Get symbol based on the selected currency
     let currencySymbol = currencySymbolArray[currencyArray.indexOf(currency)];
@@ -29,15 +50,19 @@ $(document).ready(function () {
     }
     $(".data-currency-display").append(currency);
 
+
+
     // Change currency
     $(".currencyChangeButton").click(function (data) {
-    
-        let selectedCurrency = data.currentTarget.text;
-        currency = selectedCurrency;
+        currency = data.currentTarget.text;
         currencySymbol = currencySymbolArray[currencyArray.indexOf(currency)];
         currencyObject = "price_" + currency.toLowerCase();
         $(".data-currency-display").empty().append(currency);
 
+        // COOKIE
+        let now = new Date(); // get the current date
+        now.setFullYear(now.getFullYear() + 1); // add one year to it
+        document.cookie = "selectedCurrency=" + currency + "; expires=" + now.toUTCString + "; path=/";
 
         // Get new data
 
