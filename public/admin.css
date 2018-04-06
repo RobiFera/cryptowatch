@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+
+#main-form {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.form-group{
+    width: 40%;
+    margin: auto;
+    padding-bottom: 2%;
+}
+
+.btn {
+    margin: auto;
+    display: block!important;
+}
