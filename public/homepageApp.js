@@ -3,7 +3,8 @@ $(document).ready(function () {
     // Declare your website's ip
     const website = "http://127.0.0.1:8080";
 
-
+    // Config
+    const coinsLimit = 200;
 
     function getCookie(cname) {
         var name = cname + "=";
@@ -63,7 +64,7 @@ $(document).ready(function () {
 
         // Get new data
 
-        jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=200";
+        jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=" + coinsLimit;
 
         // Update the Top list
         $.getJSON(jsonApi, function (topCoins) {
@@ -81,7 +82,7 @@ $(document).ready(function () {
 
 
     // JSON API
-    let jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=200";
+    let jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=" + coinsLimit;
 
     // Get the coins from Node and display the top 10 in order, assigning them the equivalent url. Example: BITCOIN = http://127.0.0.1:8080/coins/bitcoin
     $.getJSON(jsonApi, function (topCoins) {

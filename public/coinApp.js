@@ -5,7 +5,8 @@ $(document).ready(function () {
     // Take the coin's ID
     const coinId = location.pathname.split('/').slice(-1)[0];
 
-
+    // Config
+    const coinsLimit = 200;
 
     function getCookie(cname) {
         var name = cname + "=";
@@ -55,7 +56,7 @@ $(document).ready(function () {
 
 
     // JSON API
-    let jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=200";
+    let jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=" + coinsLimit;
 
     // Check if coins exists. If coin doesn't exists, redirect to homepage; if it does, display the data.
     $.getJSON(jsonApi, function (apiData) {
@@ -237,7 +238,7 @@ $(document).ready(function () {
 
 
         // JSON API
-        jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=200";
+        jsonApi = "https://api.coinmarketcap.com/v1/ticker/?convert=" + currency + "&limit=" + coinsLimit;
 
         $.getJSON(jsonApi, function (apiData) {
         
