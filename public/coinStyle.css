@@ -172,12 +172,15 @@ small {
     }
 }
 
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 767px) {
     #coin-name {
         font-size: 1.9rem;
     }
     .coin-price {
         font-size: 0.8rem;
+    }
+    #supply {
+        font-size: 1.4em;
     }
 }
 
@@ -199,9 +202,21 @@ small {
     }
 }
 
+@media only screen and (max-width: 510px) {
+    #supply {
+        font-size: 1em;
+    }
+}
+
 @media only screen and (max-width: 452px) {
     footer {
         font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    #supply {
+        font-size: 0.76em;
     }
 }
 
