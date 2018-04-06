@@ -2,16 +2,10 @@
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
-const request = require("request");
 const http = require("http").Server(app);
 
 // Config 
-const currency = "EUR";
-const limit = 200;
 const port = 8080;
-
-// Global variables
-let apiData;
 
 // BodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,6 +18,7 @@ app.use(express.static(__dirname + '/public/cryptoicons'));
 
 
 // -- ROUTES --
+
 
 // Homepages
 app.get("/", function (req, res) {
@@ -41,6 +36,7 @@ app.get("/coins/:coinId", function (req, res) {
 app.get("*", function (req, res) {
     res.redirect("/");
 });
+
 
 // -- END ROUTES --
 
