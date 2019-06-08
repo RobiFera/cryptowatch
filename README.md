@@ -26,5 +26,3 @@ and the [Cryptocoins iconpack](https://github.com/AllienWorks/cryptocoins) for t
   
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-  
-[![HitCount](http://hits.dwyl.io/Robfera/cryptowatch.svg)](http://hits.dwyl.io/Robfera/cryptowatch)
