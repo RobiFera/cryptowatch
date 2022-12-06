@@ -4,8 +4,8 @@
   "description": "**CryptoWatch is a tool for analysing cryptocoins's prices.**",
   "main": "app.js",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "helmet": "^3.12.0"
   },
   "devDependencies": {},
